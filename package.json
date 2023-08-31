@@ -2,8 +2,7 @@
   "name": "locadora-frontend-react",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "proxy": "https://ongames-7fkb.onrender.com/",
+  "type": "module", 
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -47,7 +46,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "tailwindcss": "^3.3.3"
+  "engines": {
+    "node": "18.16.1"
   }
 }

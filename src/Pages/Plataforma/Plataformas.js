@@ -12,7 +12,7 @@ function Plataformas() {
     const [plats, setPlats] = useState([])
 
     useEffect(() => {
-        axios.get('/plataformas')
+        axios.get(url)
             .then((response) => {
                 console.log(response.data)
                 setPlats(response.data)

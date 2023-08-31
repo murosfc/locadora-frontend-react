@@ -29,7 +29,14 @@ a:visited {
   text-decoration: solid;
   font-weight: bold;
 }
-
+.actions{
+  justify-content: center;
+  align-items: center; 
+  margin-left: auto; 
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

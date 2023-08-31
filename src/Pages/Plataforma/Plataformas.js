@@ -122,7 +122,7 @@ function Plataformas() {
                 </thead>
                 <tbody>
                     {addedPlatform.map(plat => (
-                        <tr key={plat._id} scope="row">
+                        <tr key={plat._id}>
                             <td>{plat._id}</td>
                             <td>{plat.titulo}</td>
                             <td class='actions'>

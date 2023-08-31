@@ -7,6 +7,8 @@ import './global.css';
 
 import Home from './Pages/Home/index.js'
 import Plataformas from './Pages/Plataforma/Plataformas.js'
+import Login from './Pages/Login/Login.js';
+import Jogos from './Pages/Jogos/Jogos.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( 
@@ -14,6 +16,8 @@ root.render(
     <Routes>
       <Route path="/" element={<Home/>}/> 
       <Route path="/plataformas/" element={<Plataformas/>}/> 
+      <Route path="/jogos/" element={<Jogos/>}/> 
+      <Route path="/login/" element={<Login/>}/> 
     </Routes>
   </BrowserRouter>
 );

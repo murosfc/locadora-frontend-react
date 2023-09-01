@@ -9,6 +9,7 @@ import Home from './Pages/Home/index.js'
 import Plataformas from './Pages/Plataforma/Plataformas.js'
 import Login from './Pages/Login/Login.js';
 import Jogos from './Pages/Jogos/Jogos.js';
+import Erro from './Pages/Error/Error.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( 
@@ -17,7 +18,8 @@ root.render(
       <Route path="/" element={<Home/>}/> 
       <Route path="/plataformas/" element={<Plataformas/>}/> 
       <Route path="/jogos/" element={<Jogos/>}/> 
-      <Route path="/login/" element={<Login/>}/> 
+      <Route path="/login/" element={<Login/>}/>
+      <Route path="/erro/" element={<Erro/>}/>  
     </Routes>
   </BrowserRouter>
 );

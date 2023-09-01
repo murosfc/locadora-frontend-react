@@ -49,7 +49,6 @@ footer{
     padding: 1rem;
     text-align: center;
     font-size: 0.8rem;
-    color: #ccc;
-   
+    color: #ccc;   
   }
   `

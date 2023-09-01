@@ -3,7 +3,7 @@ import { endpoint, getPlataformas, addPlataforma, deletePlataforma, updatePlataf
 import axios from "axios";
 import '../../global.css';
 import Menu from "../../Components/Menu.js";
-import { platAdd } from "./style.js";
+import { platAdd, form } from "./style.js";
 
 function Plataformas() {
     
@@ -98,19 +98,21 @@ function Plataformas() {
                 <button type="button" className="btn btn-dark" onClick={handleAddClick}>+</button>
             </div>
             {showAddForm && (
-                <div>
+                <newPlat>
                     <h5>Cadastrar nova plataforma:</h5>
-                    <input
-                        type="text"
-                        placeholder="Título"
-                        value={newTitle}
-                        onChange={(e) => setNewTitle(e.target.value)}
-                    />
-                    <button type="button" className="btn btn-primary" onClick={handleSave}>Salvar</button>
-                    <button type="button" className="btn btn-secondary" onClick={handleCancel}>Cancelar</button>
+                    <div style={form}>
+                        <input 
+                            type="text"
+                            placeholder="Título"
+                            value={newTitle}
+                            onChange={(e) => setNewTitle(e.target.value)}
+                        />
+                        <button type="button" className="btn btn-primary" onClick={handleSave}>Salvar</button>
+                        <button type="button" className="btn btn-secondary" onClick={handleCancel}>Cancelar</button>
+                    </div>
                     {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
                     {successMessage && <div style={{ color: "green" }}>{successMessage}</div>}
-                </div>
+                </newPlat>
             )}
             <table className="table table-striped table-dark">
                 <thead>

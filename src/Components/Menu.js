@@ -4,11 +4,11 @@ import { endpoint, userByToken } from "../API/RotasAPIExterna.js";
 
 function Menu() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    var [userType, setUserType]  = useState("");    
-    const token = localStorage.getItem("token");     
+    var [userType, setUserType]  = useState("");  
+    const token = localStorage.getItem("token");       
     
     axios.interceptors.request.use(
-        config => {                      
+        config => {                                  
             if (token) {
                 config.headers["Authorization"] = `${token}`;
             }
@@ -26,14 +26,14 @@ function Menu() {
             axios.get(url)
                 .then((response) => {                                      
                     setUserType(response.data._tipo);                   
-                }).catch((error) => {                                 
+                }).catch((error) => { 
+                    logout();                                
                     if(error.code === "ERR_NETWORK")
                         window.location.replace('/erro/');   
                 });
         }
-    }, [token]);    
+    }, [token]);   
     
-    console.log(userType);
     return isLoggedIn ? AuthenticatedMenu() : UnauthenticatedMenu();
 
     function UnauthenticatedMenu() {
@@ -56,7 +56,7 @@ function Menu() {
                         </li>
                     </ul>
                 </div>
-            </nav>
+            </nav>            
         );
     }
 

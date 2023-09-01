@@ -8,3 +8,7 @@ export const updatePlataforma = "/plataformas/update/";
 export const userLogin = "/usuarios/login";
 export const userByToken = "/usuarios/token";
 
+export const getJogos = "/jogos";
+
+export const getTopContas = "/contas/top";
+

@@ -34,7 +34,7 @@ span{
 .titulo{
     font-weight: bold;
     font-size: 1.2rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 .material-symbols-outlined {
     font-variation-settings:
@@ -44,10 +44,13 @@ span{
     'opsz' 24
   }
 `
-export const FaleConosco = styled.footer`   
-  text-align: center;
-  font-size: 0.8rem;
-  color: #ccc;  
-  bottom: 0;
-  width: 100%;
-`
+export const FaleConosco = styled.footer`
+footer{
+    margin-top: auto;
+    margin-bottom: 0;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ccc;   
+  }
+  `

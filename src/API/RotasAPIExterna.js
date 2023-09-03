@@ -1,5 +1,5 @@
-//export const endpoint = "https://ongames-7fkb.onrender.com";
-export const endpoint = "http://localhost:8080";
+export const endpoint = "https://ongames-7fkb.onrender.com";
+//export const endpoint = "http://localhost:8080";
 export const getPlataformas = "/plataformas";
 export const addPlataforma = "/plataformas/add";
 export const deletePlataforma = "/plataformas/delete/";

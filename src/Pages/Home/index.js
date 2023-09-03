@@ -3,7 +3,6 @@ import Menu from "../../Components/Menu.js";
 import { endpoint, getTopContas } from "../../API/RotasAPIExterna.js";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { responsiveProperty } from "@mui/material/styles/cssUtils.js";
 
 function Home() {
     const [jogos, setJogos] = useState([]);

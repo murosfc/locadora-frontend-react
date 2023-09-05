@@ -5,8 +5,8 @@ import '../../global.css';
 import Menu from "../../Components/Menu.js";
 import { platAdd, form } from "./style.js";
 
-function Plataformas() {
-    
+function Plataformas() {    
+    const [addEditPlat , setAddEditPlat ] = useState("");
     
     const [addedPlatform, setAddedPlatform] = useState([]);
     const [showAddForm, setShowAddForm] = useState(false); // To control the visibility of the add form
@@ -28,6 +28,8 @@ function Plataformas() {
     }, [plataformListUpdate]);
 
     const handleAddClick = () => {
+        setAddEditPlat("Novo cadastro de plataforma:");
+        setEditingPlatform(null);
         setShowAddForm(true);
         setNewTitle("");
         setErrorMessage("");
@@ -69,8 +71,7 @@ function Plataformas() {
             setEditingPlatform(null);
             plataformListUpdate();
         })
-        .catch((error) => {
-            console.log(error.response.data.mensagem);
+        .catch((error) => {           
             if (error.response.status === 400) {
                 setErrorMessage(error.response.data.mensagem);
             } else {
@@ -84,6 +85,7 @@ function Plataformas() {
     };
 
     const handleEditClick = (platform) => {
+        setAddEditPlat("Editando a plataforma de id: " + platform._id + " e título atual: " + platform.titulo);
         setEditingPlatform(platform);
         setShowAddForm(true);
         setNewTitle(platform.titulo);
@@ -99,7 +101,7 @@ function Plataformas() {
             </div>
             {showAddForm && (
                 <newPlat>
-                    <h5>Cadastrar nova plataforma:</h5>
+                    <h5>{addEditPlat}</h5>
                     <div style={form}>
                         <input 
                             type="text"

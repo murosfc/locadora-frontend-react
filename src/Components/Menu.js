@@ -77,7 +77,7 @@ function Menu() {
                                 <a class="nav-link" href="/plataformas">Plataformas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Jogos">Jogos</a>
+                                <a class="nav-link" href="/cadastroJogos">Jogos</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" onClick={logout}>Logout</a>

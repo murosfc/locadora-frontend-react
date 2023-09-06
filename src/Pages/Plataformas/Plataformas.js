@@ -36,9 +36,7 @@ function Plataformas() {
         setSuccessMessage("");
     };
 
-    function plataformListUpdate (){
-        return true;
-    };
+    function plataformListUpdate (){};
     
     const handleDelete = (id, titulo) => {
         const confirmation = window.confirm(`Tem certeza que deseja excluir a plataforma '${titulo}'?`);
@@ -94,11 +92,7 @@ function Plataformas() {
     return (
         <>
             <h3>Gerenciamento de plataformas</h3>
-            <Menu />
-            <div data-bs-theme="dark" style={platAdd}>
-                <h5>Plataformas cadastradas:</h5>
-                <button type="button" className="btn btn-dark" onClick={handleAddClick}>+</button>
-            </div>
+            <Menu />            
             {showAddForm && (
                 <newPlat>
                     <h5>{addEditPlat}</h5>
@@ -116,6 +110,10 @@ function Plataformas() {
                     {successMessage && <div style={{ color: "green" }}>{successMessage}</div>}
                 </newPlat>
             )}
+            <div data-bs-theme="dark" style={platAdd}>
+                <h5>Plataformas cadastradas:</h5>
+                <button type="button" className="btn btn-dark" onClick={handleAddClick}>+</button>
+            </div>
             <table className="table table-striped table-dark">
                 <thead>
                     <tr>

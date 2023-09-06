@@ -42,3 +42,9 @@ test('Plataformas Page', () => {
   const linkElement = screen.getByText(/Gerenciamento de plataformas/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('Jogos Page', () => {
+  render(<Jogos />);
+  const linkElement = screen.getByText(/Gerenciamento de jogos/i);
+  expect(linkElement).toBeInTheDocument();
+});

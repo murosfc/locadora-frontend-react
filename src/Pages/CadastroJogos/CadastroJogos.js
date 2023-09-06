@@ -128,11 +128,7 @@ function CadastroJogos() {
     return (
         <>
             <h3>Gerenciamento de Jogos</h3>
-            <Menu />
-            <div data-bs-theme="dark" style={jogoAdd}>
-                <h5>Jogos cadastrados:</h5>
-                <button type="button" className="btn btn-dark" onClick={handleAddClick}>+</button>
-            </div>
+            <Menu />           
             {showAddForm && (
                 <addNovoJogo>
                     <h5>{addEditJogo}</h5>
@@ -177,6 +173,10 @@ function CadastroJogos() {
                     </div>
                 </addNovoJogo>
             )}
+            <div data-bs-theme="dark" style={jogoAdd}>
+                <h5>Jogos cadastrados:</h5>
+                <button type="button" className="btn btn-dark" onClick={handleAddClick}>+</button>
+            </div>
             <table className="table table-striped table-dark">
                 <thead>
                     <tr>

@@ -14,4 +14,5 @@ export const deleteJogo = "/jogos/delete/";
 export const updateJogo = "/jogos/update/";
 
 export const getTopContas = "/contas/top";
+export const getContas = "/contas";
 

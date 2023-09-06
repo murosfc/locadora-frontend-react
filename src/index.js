@@ -6,11 +6,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './global.css';
 
 import Home from './Pages/Home/index.js'
-import Plataformas from './Pages/Plataforma/Plataformas.js'
+import Plataformas from './Pages/Plataformas/Plataformas.js'
 import Login from './Pages/Login/Login.js';
 import Jogos from './Pages/Jogos/Jogos.js';
 import Erro from './Pages/Error/Error.js';
 import CadastroJogos from './Pages/CadastroJogos/CadastroJogos.js';
+import Contas from './Pages/Contas/Contas.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( 
@@ -22,7 +23,7 @@ root.render(
       <Route path="/login/" element={<Login/>}/>
       <Route path="/erro/" element={<Erro/>}/> 
       <Route path="/cadastroJogos/" element={<CadastroJogos/>}/> 
-
+      <Route path="/contas/" element={<Contas/>}/> 
     </Routes>
   </BrowserRouter>
 );

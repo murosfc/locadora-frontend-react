@@ -80,6 +80,9 @@ function Menu() {
                                 <a class="nav-link" href="/cadastroJogos">Jogos</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="/contas">Contas</a>
+                            </li>
+                            <li class="nav-item">
                             <a class="nav-link" onClick={logout}>Logout</a>
                             </li>
                         </ul>

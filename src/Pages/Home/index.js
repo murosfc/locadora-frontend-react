@@ -27,11 +27,9 @@ function Home() {
             .then((response) => {
                 const contasArray = response.data;
                 contasArray.forEach(conta => {
-                    conta.jogos.forEach(jogo => {                        
-                        jogos.push(jogo);
+                    jogos.push(conta.jogo);
                 });
-                });
-                setJogos(jogos);               
+                setJogos(jogos);
             })
             .catch((error) => {
                 console.log(error);
@@ -61,8 +59,8 @@ function Home() {
                     )}
                 </JogosList>
                 <FaleConosco><a href="mailto:muros@yahoo.com.br">Fale conosco</a></FaleConosco>
-            </Container>            
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />            
+            </Container>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         </>
     )
 }

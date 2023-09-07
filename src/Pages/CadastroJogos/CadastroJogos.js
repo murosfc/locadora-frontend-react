@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import axios from "axios";
 import Menu from "../../Components/Menu.js";
 import { addJogo, deleteJogo, endpoint, getJogos, getPlataformas, updateJogo } from "../../API/RotasAPIExterna.js";
-import { jogoAdd, titulo, valor, selPlat, inpUrl, addNovoJogo } from "./style.js";
+import { jogoAdd, titulo, valor, selPlat, inpUrl} from "./style.js";
 
 function CadastroJogos() {
     const [jogos, setJogos] = useState([]);
@@ -20,9 +20,7 @@ function CadastroJogos() {
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
     
-    function jogosListUpdate (){}
-    
-    useEffect(() => {        
+    const jogosListUpdate = () => {
         axios.get(endpoint + getJogos)
             .then((response) => {
                 setJogos(response.data);
@@ -30,8 +28,10 @@ function CadastroJogos() {
             .catch((error) => {
                 console.log(error);
             });
-
-        // Carregar a lista de plataformas
+    }
+    
+    useEffect(() => {  
+        jogosListUpdate();
         axios.get(endpoint + getPlataformas)
             .then((response) => {
                 setPlataformas(response.data);
@@ -39,7 +39,7 @@ function CadastroJogos() {
             .catch((error) => {
                 console.log(error);
             });
-    }, [jogosListUpdate]);
+    }, []);
 
     const handleAddClick = () => {
         setAddEditJogo("Novo cadastro de jogo:");
@@ -58,8 +58,7 @@ function CadastroJogos() {
     const handleSave = () => {
         setErrorMessage("");        
         const url = (editingJogo ? endpoint + updateJogo + editingJogo._id : endpoint + addJogo);        
-        const method = editingJogo ? "PUT" : "POST";
-        console.log(newJogo.plataforma)
+        const method = editingJogo ? "PUT" : "POST";        
         const idPlataforma = plataformas.find((platform) => platform.titulo === newJogo.plataforma)._id;
         const body = {
             titulo: newJogo.titulo,
@@ -68,8 +67,7 @@ function CadastroJogos() {
             valor: newJogo.valor,
             urlImagem: newJogo.urlImagem,
         };
-        console.log(body);
-
+        
         axios({ method: method, url: url, data: body })
             .then((response) => {
                 method === "POST" ? setSuccessMessage("Cadastro realizado com sucesso.") : setSuccessMessage("Cadastro atualizado com sucesso.");
@@ -131,8 +129,7 @@ function CadastroJogos() {
             <Menu />           
             {showAddForm && (
                 <addNovoJogo>
-                    <h5>{addEditJogo}</h5>
-                    <div>
+                    <h5>{addEditJogo}</h5>                    
                         <input
                             type="text"
                             placeholder="Título"
@@ -169,8 +166,7 @@ function CadastroJogos() {
                         <button type="button" className="btn btn-primary" onClick={handleSave}>Salvar</button>
                         <button type="button" className="btn btn-secondary" onClick={handleCancel}>Cancelar</button>
                         {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
-                        {successMessage && <div style={{ color: "green" }}>{successMessage}</div>}
-                    </div>
+                        {successMessage && <div style={{ color: "green" }}>{successMessage}</div>}                    
                 </addNovoJogo>
             )}
             <div data-bs-theme="dark" style={jogoAdd}>

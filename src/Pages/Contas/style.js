@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-export const addNovaConta = styled.div`{
+export const addNovaConta = styled.div
+`{
     input{
         width: 50%;
         margin: 0.5rem 0;
@@ -23,7 +24,6 @@ export const form = { display: 'flex', flexDirection: 'row', padding: '1rem',  j
 
 export const contasAdd = { display: 'flex', justifyContent: 'space-between', padding: '0.5rem', fontWeight: 'bolder'}
 
-export const titulo = {width: '50%', heigth: '30%'}
-export const valor = {width: '20%', heigth: '30%'}
-export const selPlat = {width: '30%'}
-export const inpUrl = {width: '100%'}
+export const email = {width: '50%', heigth: '30%'}
+export const senha = {width: '20%', heigth: '30%'}
+export const selectJogo = {width: '30%'}

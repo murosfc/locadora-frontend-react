@@ -15,4 +15,7 @@ export const updateJogo = "/jogos/update/";
 
 export const getTopContas = "/contas/top";
 export const getContas = "/contas";
+export const addConta = "/contas/add";
+export const deleteConta = "/contas/delete/";
+export const updateConta = "/contas/update/";
 

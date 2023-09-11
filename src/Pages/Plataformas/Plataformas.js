@@ -15,7 +15,18 @@ function Plataformas() {
     const [successMessage, setSuccessMessage] = useState("");
     const [editingPlatform, setEditingPlatform] = useState(null);
 
-
+    axios.interceptors.request.use(
+        config => {                                  
+            if (token) {
+                config.headers["Authorization"] = `${token}`;
+            }
+            return config;
+        },
+        error => {
+            return Promise.reject(error);
+        }
+    );
+    
     useEffect(() => {
         plataformListUpdate();
     }, []);

@@ -19,16 +19,18 @@ function CadastroJogos() {
 
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
-    
-    const jogosListUpdate = () => {
-        axios.get(endpoint + getJogos)
-            .then((response) => {
-                setJogos(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+
+    axios.interceptors.request.use(
+        config => {                                  
+            if (token) {
+                config.headers["Authorization"] = `${token}`;
+            }
+            return config;
+        },
+        error => {
+            return Promise.reject(error);
+        }
+    );  
     
     useEffect(() => {  
         jogosListUpdate();
@@ -40,6 +42,16 @@ function CadastroJogos() {
                 console.log(error);
             });
     }, []);
+
+    const jogosListUpdate = () => {
+        axios.get(endpoint + getJogos)
+            .then((response) => {
+                setJogos(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
     const handleAddClick = () => {
         setAddEditJogo("Novo cadastro de jogo:");

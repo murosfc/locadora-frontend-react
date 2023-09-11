@@ -15,6 +15,8 @@ function Plataformas() {
     const [successMessage, setSuccessMessage] = useState("");
     const [editingPlatform, setEditingPlatform] = useState(null);
 
+    const token = localStorage.getItem("token");
+
     axios.interceptors.request.use(
         config => {                                  
             if (token) {

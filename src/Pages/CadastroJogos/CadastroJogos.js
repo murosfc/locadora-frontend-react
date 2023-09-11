@@ -20,6 +20,8 @@ function CadastroJogos() {
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
 
+    const token = localStorage.getItem("token");
+
     axios.interceptors.request.use(
         config => {                                  
             if (token) {
